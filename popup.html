@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TabOut</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>🕐 TabOut</h1>
+      <div class="total-time">
+        <span class="label">Today</span>
+        <span class="time" id="totalTime">0m</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="sitesList" class="sites-list">
+        <!-- Sites will be rendered here -->
+      </div>
+    </main>
+
+    <footer>
+      <button id="openStats" class="btn btn-primary">📈 Stats</button>
+      <button id="openSettings" class="btn btn-secondary">⚙️ Settings</button>
+    </footer>
+  </div>
+
+  <script src="src/popup.js"></script>
+</body>
+
+</html>

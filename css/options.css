@@ -1,0 +1,333 @@
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a24;
+    --bg-hover: #222230;
+    --accent-primary: #00d4aa;
+    --accent-secondary: #00b894;
+    --accent-glow: rgba(0, 212, 170, 0.15);
+    --accent-gradient: linear-gradient(135deg, #00d4aa 0%, #00b894 50%, #0984e3 100%);
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --border-radius: 14px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--accent-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Settings Sections */
+.settings-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.settings-section h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.section-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* Setting Items */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--bg-card);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-info label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.setting-description {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Toggle Switch */
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-card);
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.toggle input:checked+.toggle-slider {
+    background: var(--accent-gradient);
+}
+
+.toggle input:checked+.toggle-slider:before {
+    transform: translateX(22px);
+}
+
+/* Time Input */
+.time-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.time-input input {
+    width: 56px;
+    padding: 8px 10px;
+    border: 1px solid var(--bg-card);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.time-input input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.time-input span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Add Limit Section */
+.add-limit {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.add-limit input[type="text"] {
+    flex: 1;
+    min-width: 150px;
+    padding: 11px 14px;
+    border: 1px solid var(--bg-card);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.add-limit input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.add-limit input[type="text"]::placeholder {
+    color: var(--text-muted);
+}
+
+/* Limits List */
+.limits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.limit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-primary);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--bg-card);
+}
+
+.limit-domain {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.limit-domain img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.limit-domain span {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.limit-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.limit-time {
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.limit-remove {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.limit-remove:hover {
+    color: var(--danger);
+}
+
+.empty-limits {
+    text-align: center;
+    padding: 16px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    color: #0a0a0f;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.3);
+}
+
+.btn-secondary {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.save-status {
+    color: var(--accent-primary);
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.save-status.visible {
+    opacity: 1;
+}

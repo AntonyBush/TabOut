@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TabOut - Settings</title>
+    <link rel="stylesheet" href="../css/options.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Settings</h1>
+            <p class="subtitle">Configure your time tracking preferences</p>
+        </header>
+
+        <main>
+            <!-- General Settings -->
+            <section class="settings-section">
+                <h2>📊 General</h2>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="nudgeEnabled">Enable Nudge</label>
+                        <p class="setting-description">Block sites when you exceed time limits</p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="nudgeEnabled" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label for="globalLimit">Daily Limit</label>
+                        <p class="setting-description">Total daily browsing time allowed</p>
+                    </div>
+                    <div class="time-input">
+                        <input type="number" id="globalLimitHours" min="0" max="24" value="4">
+                        <span>hours</span>
+                        <input type="number" id="globalLimitMinutes" min="0" max="59" value="0">
+                        <span>min</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Site Limits -->
+            <section class="settings-section">
+                <h2>🎯 Site Limits</h2>
+                <p class="section-description">Set time limits for specific sites. A blocking overlay will appear when
+                    limits are reached.</p>
+
+                <div class="add-limit">
+                    <input type="text" id="newSiteDomain" placeholder="e.g., youtube.com">
+                    <div class="time-input">
+                        <input type="number" id="newSiteMinutes" min="1" max="1440" value="30">
+                        <span>min</span>
+                    </div>
+                    <button id="addLimitBtn" class="btn btn-primary">Add</button>
+                </div>
+
+                <div id="limitsContainer" class="limits-list">
+                    <!-- Limits will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Data Management -->
+            <section class="settings-section">
+                <h2>🗑️ Data</h2>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label>Reset Today</label>
+                        <p class="setting-description">Clear today's tracking data</p>
+                    </div>
+                    <button id="resetTodayBtn" class="btn btn-danger">Reset</button>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <label>Clear All</label>
+                        <p class="setting-description">Delete all history and settings</p>
+                    </div>
+                    <button id="clearAllBtn" class="btn btn-danger">Clear</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="save-status" id="saveStatus"></p>
+        </footer>
+    </div>
+
+    <script src="../src/options.js"></script>
+</body>
+
+</html>

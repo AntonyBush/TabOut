@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="grad128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <circle cx="64" cy="64" r="56" fill="url(#grad128)" filter="url(#shadow)"/>
+  <circle cx="64" cy="64" r="42" fill="none" stroke="white" stroke-width="4"/>
+  <!-- Hour marks -->
+  <line x1="64" y1="28" x2="64" y2="32" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="64" y1="96" x2="64" y2="100" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="28" y1="64" x2="32" y2="64" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="96" y1="64" x2="100" y2="64" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <!-- Clock hands -->
+  <line x1="64" y1="64" x2="64" y2="38" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="64" y1="64" x2="84" y2="64" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="5" fill="white"/>
+</svg>
